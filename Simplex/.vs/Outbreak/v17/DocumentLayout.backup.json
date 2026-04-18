@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\OpenGl 3D\\Simplex\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.tcs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.tcs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.tes||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.tes||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "simplex.fs",
+              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.fs",
+              "RelativeDocumentMoniker": "simplex.fs",
+              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.fs",
+              "RelativeToolTip": "simplex.fs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-31T12:31:23.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "simplex.tcs",
+              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.tcs",
+              "RelativeDocumentMoniker": "simplex.tcs",
+              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.tcs",
+              "RelativeToolTip": "simplex.tcs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-31T12:31:22.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "simplex.tes",
+              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.tes",
+              "RelativeDocumentMoniker": "simplex.tes",
+              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.tes",
+              "RelativeToolTip": "simplex.tes",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAowHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-31T12:31:21.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "simplex.vs",
+              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.vs",
+              "RelativeDocumentMoniker": "simplex.vs",
+              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.vs",
+              "RelativeToolTip": "simplex.vs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-31T12:31:11.994Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

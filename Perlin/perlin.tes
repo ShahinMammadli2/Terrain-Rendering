@@ -1,0 +1,98 @@
+#version 450 core
+layout(quads, fractional_even_spacing, ccw) in;
+
+in TCS_OUT {
+    vec3 pos;
+    vec2 uv;
+} tes_in[];
+
+out TES_OUT {
+    vec3 worldPos;
+    vec3 normal;
+    vec2 uv;
+    float height;
+} tes_out;
+
+layout(location=0)  uniform mat4 uModel;
+layout(location=1)  uniform mat4 uView;
+layout(location=2)  uniform mat4 uProj;
+
+// FBM controls
+layout(location=3)  uniform float uAmplitude  = 300.0;   // vertical scale
+layout(location=4)  uniform float uFrequency  = 50.0;   // world->noise scale
+layout(location=5)  uniform int   uOctaves    = 5;
+layout(location=6)  uniform float uLacunarity = 25.0;
+layout(location=7)  uniform float uGain       = 0.5;
+layout(location=8)  uniform vec2  uScroll     = vec2(0.0); // animate if desired
+
+// ---------- Perlin core ----------
+
+float random(vec2 p)
+{
+     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
+vec2 gradient(vec2 p)
+{
+     float r = random(p) * 6.2831853;
+     return vec2(cos(r), sin(r));
+}
+
+vec2 fade(vec2 t)
+{
+     return t * t * t * (t * (t * 6.0 - 15.0) + 10.0);
+}
+
+float perlin2D(vec2 p)
+{
+     vec2 i = floor(p);
+     vec2 f = fract(p);
+
+     vec2 g00 = gradient(i + vec2(0.0, 0.0));
+     vec2 g01 = gradient(i + vec2(0.0, 1.0));
+     vec2 g10 = gradient(i + vec2(1.0, 0.0));
+     vec2 g11 = gradient(i + vec2(1.0, 1.0));
+
+     vec2 d00 = (f - vec2(0.0, 0.0));
+     vec2 d10 = (f - vec2(1.0, 0.0));
+     vec2 d01 = (f - vec2(0.0, 1.0));
+     vec2 d11 = (f - vec2(1.0, 1.0));
+
+     float v00 = dot(g00, d00);
+     float v10 = dot(g10, d10);
+     float v01 = dot(g01, d01);
+     float v11 = dot(g11, d11);
+
+     vec2 u = fade(f);
+     float nx0 = mix(v00, v10, u.x);
+     float nx1 = mix(v01, v11, u.x);
+
+     return mix(nx0, nx1, u.y);
+}
+
+void main() {
+    vec2 uv = gl_TessCoord.xy;
+
+    vec3 p = mix(mix(tes_in[0].pos, tes_in[1].pos, uv.x), mix(tes_in[3].pos, tes_in[2].pos, uv.x), uv.y);
+
+    float h = perlin2D(p.xz * uFrequency) * uAmplitude;
+
+    // from ChatGPT
+    float e = 0.01;
+
+    float hL = perlin2D((p.xz + vec2(-e,0)) * uFrequency) * uAmplitude;
+    float hR = perlin2D((p.xz + vec2(e,0)) * uFrequency) * uAmplitude;
+    float hD = perlin2D((p.xz + vec2(0,-e)) * uFrequency) * uAmplitude;
+    float hU = perlin2D((p.xz + vec2(0,e)) * uFrequency) * uAmplitude;
+
+    vec3 normal = normalize(vec3(hL - hR, 2.0*e, hD - hU));
+
+    vec3 world = vec3(p.x, p.y + h, p.z);
+
+    tes_out.worldPos = world;
+    tes_out.normal = normal;
+    tes_out.uv = uv;
+    tes_out.height = h;
+
+    gl_Position = uProj * uView * uModel * vec4(world, 1.0);
+}

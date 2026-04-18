@@ -1,0 +1,77 @@
+newmtl room_spawn
+Ka 0.000 0.000 0.000
+Kd 0.850 0.250 0.250
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl room_hall
+Ka 0.000 0.000 0.000
+Kd 0.300 0.800 0.400
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl room_courtyard
+Ka 0.000 0.000 0.000
+Kd 0.300 0.450 0.950
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl room_stairs
+Ka 0.000 0.000 0.000
+Kd 0.950 0.850 0.250
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl room_power
+Ka 0.000 0.000 0.000
+Kd 0.700 0.300 0.850
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl portal
+Ka 0.000 0.000 0.000
+Kd 0.950 0.950 0.950
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl spawner
+Ka 0.000 0.000 0.000
+Kd 0.100 0.100 0.100
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl station
+Ka 0.000 0.000 0.000
+Kd 1.000 0.550 0.100
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl light
+Ka 0.000 0.000 0.000
+Kd 0.300 0.950 0.950
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl powerSw
+Ka 0.000 0.000 0.000
+Kd 0.950 0.300 0.300
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
+newmtl border
+Ka 0.000 0.000 0.000
+Kd 0.750 0.750 0.750
+Ks 0.000 0.000 0.000
+d 1.0
+illum 1
+
