@@ -27,7 +27,7 @@ public:
 	std::unique_ptr<Cubemap> skybox;
 	std::unique_ptr<Grass> grass;
 
-	Texture2D grassTexture;
+	//Texture2D grassTexture;
 	const std::vector<std::string> faces
 	{
 		"resources/skybox/right.jpg",

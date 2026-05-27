@@ -11,7 +11,7 @@
 
 class Grass{
 public:
-	Grass(Shader& shader);
+	Grass(Shader& shader, float frequency, float amplitude, float spread);
 	~Grass();
 	void Draw(Texture2D& texture, glm::mat4& view, glm::mat4& projection);
 

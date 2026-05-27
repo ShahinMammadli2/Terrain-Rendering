@@ -1,0 +1,74 @@
+#version 450 core
+layout(vertices = 4) out;
+
+layout(location=0) uniform mat4 uModel;
+layout(location=1) uniform mat4 uView;
+
+in VS_OUT {
+    vec3 pos;
+    vec2 uv;
+} tcs_in[];
+
+out TCS_OUT {
+    vec3 pos;
+    vec2 uv;
+} tcs_out[];
+
+
+// LOD controls
+layout(location=12) uniform float uMinDistance = 30.0;    // start reducing tess after this
+layout(location=13) uniform float uMaxDistance = 200.0;   // fully reduced by this
+layout(location=14) uniform float uMinTess     = 4.0;     // far tess level
+layout(location=15) uniform float uMaxTess     = 32.0;    // near tess level
+
+
+float camDist(int idx) {
+    vec4 eye = uView * uModel * gl_in[idx].gl_Position;
+    return length(eye.xyz);
+}
+
+void main()
+{
+    // Pass through control points to TES
+    tcs_out[gl_InvocationID].pos = tcs_in[gl_InvocationID].pos;
+    tcs_out[gl_InvocationID].uv  = tcs_in[gl_InvocationID].uv;
+
+    // Set tess factors once per patch
+    if (gl_InvocationID == 0)
+    {
+        // distances for the 4 corners
+        float d0 = camDist(0);
+        float d1 = camDist(1);
+        float d2 = camDist(2);
+        float d3 = camDist(3);
+
+        // Normalize distance into 0..1 where 0=near, 1=far
+        float nd0 = clamp( (d0 - uMinDistance) / max(uMaxDistance - uMinDistance, 1e-4), 0.0, 1.0 );
+        float nd1 = clamp( (d1 - uMinDistance) / max(uMaxDistance - uMinDistance, 1e-4), 0.0, 1.0 );
+        float nd2 = clamp( (d2 - uMinDistance) / max(uMaxDistance - uMinDistance, 1e-4), 0.0, 1.0 );
+        float nd3 = clamp( (d3 - uMinDistance) / max(uMaxDistance - uMinDistance, 1e-4), 0.0, 1.0 );
+
+        float e0 = min(nd1, nd2); // edge between ctrl pts 1-2 
+        float e1 = min(nd0, nd1); // edge 0-1
+        float e2 = min(nd3, nd0); // edge 3-0
+        float e3 = min(nd2, nd3); // edge 2-3
+
+        float T0 = mix(uMaxTess, uMinTess, e0);
+        float T1 = mix(uMaxTess, uMinTess, e1);
+        float T2 = mix(uMaxTess, uMinTess, e2);
+        float T3 = mix(uMaxTess, uMinTess, e3);
+
+        // Assign (ordering for quads in OpenGL):
+        // outer[0] = v=1 edge (between CP1-CP2)
+        // outer[1] = u=1 edge (between CP2-CP3)
+        // outer[2] = v=0 edge (between CP3-CP0)
+        // outer[3] = u=0 edge (between CP0-CP1)
+        gl_TessLevelOuter[0] = T0;
+        gl_TessLevelOuter[1] = T1;
+        gl_TessLevelOuter[2] = T3;
+        gl_TessLevelOuter[3] = T2;
+
+        gl_TessLevelInner[0] = max(gl_TessLevelOuter[1], gl_TessLevelOuter[3]); // u-direction
+        gl_TessLevelInner[1] = max(gl_TessLevelOuter[0], gl_TessLevelOuter[2]); // v-direction
+    }
+}

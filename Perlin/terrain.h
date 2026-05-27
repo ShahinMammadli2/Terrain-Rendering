@@ -22,7 +22,7 @@ private:
 	float terrainHeight{ 100.0f };
 	uint32_t VAO{};
 	uint32_t VBO{};
-	int width, height, nrChannels = 0;
+	int width = 0, height = 0, nrChannels = 0;
 	uint32_t texture{};
 	void GenerateVertices();
 	uint32_t CreateTexture(const std::string& path);

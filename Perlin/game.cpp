@@ -29,11 +29,7 @@ void Game::Init()
 	ResourceManager::LoadTexture("grassa.png", true, "grassTex");
 
 	// grass
-	grass = std::make_unique<Grass>(ResourceManager::GetShader("grass"));
-
-	grass->uFrequency = 50.0f;   // same as TES uFrequency
-	grass->uAmplitude = 300.0f;  // same as TES uAmplitude
-	grass->spreadRadius = 500.0f;
+	grass = std::make_unique<Grass>(ResourceManager::GetShader("grass"), 50.0f, 300.0f, 500.0f);
 
 	skybox = std::make_unique<Cubemap>(ResourceManager::GetShader("skybox"));
 	skybox->Generate(this->faces);

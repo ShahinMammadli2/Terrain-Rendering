@@ -129,7 +129,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\glad\src\glad.c" />
+    <ClCompile Include="..\..\..\glad\src\glad.c">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+    </ClCompile>
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="cubemap.cpp" />
     <ClCompile Include="game.cpp" />

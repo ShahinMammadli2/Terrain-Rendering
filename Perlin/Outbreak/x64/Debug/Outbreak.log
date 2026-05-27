@@ -1,5 +1,2 @@
-﻿  game.cpp
-  grass.cpp
-  program.cpp
-  Generating Code...
-  Outbreak.vcxproj -> D:\OpenGl 3D\Perlin\x64\Debug\Outbreak.exe
+﻿terrain.obj : error LNK2001: unresolved external symbol glad_glPatchParameteri
+D:\Terrain-OpenGL\Terrain-Rendering\Perlin\x64\Debug\Outbreak.exe : fatal error LNK1120: 1 unresolved externals

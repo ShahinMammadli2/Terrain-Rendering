@@ -1,29 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\OpenGl 3D\\Simplex\\",
+  "WorkspaceRootPath": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\terrain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:terrain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\terrain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:terrain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
-      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.tcs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.tcs||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.tcs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\OpenGl 3D\\Simplex\\simplex.tes||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.fs||{8A5AA6CF-46E3-4520-A70A-7393D15233E9}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\glad\\src\\glad.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\terrain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:terrain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\terrain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:terrain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.vs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.vs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.tes||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{0B8AB0C8-D085-4547-9B14-CE7C1776D3C3}|Outbreak.vcxproj|solutionrelative:simplex.tes||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -34,28 +37,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "terrain.cpp",
-              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\terrain.cpp",
-              "RelativeDocumentMoniker": "terrain.cpp",
-              "ToolTip": "D:\\OpenGl 3D\\Simplex\\terrain.cpp",
-              "RelativeToolTip": "terrain.cpp",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-03T13:48:57.289Z",
+              "DocumentIndex": 2,
+              "Title": "glad.c",
+              "DocumentMoniker": "D:\\glad\\src\\glad.c",
+              "RelativeDocumentMoniker": "..\\..\\..\\glad\\src\\glad.c",
+              "ToolTip": "D:\\glad\\src\\glad.c",
+              "RelativeToolTip": "..\\..\\..\\glad\\src\\glad.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-04-18T19:37:58.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "terrain.cpp",
+              "DocumentMoniker": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\terrain.cpp",
+              "RelativeDocumentMoniker": "terrain.cpp",
+              "ToolTip": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\terrain.cpp",
+              "RelativeToolTip": "terrain.cpp",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-03T13:48:57.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "terrain.h",
-              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\terrain.h",
+              "DocumentMoniker": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\terrain.h",
               "RelativeDocumentMoniker": "terrain.h",
-              "ToolTip": "D:\\OpenGl 3D\\Simplex\\terrain.h",
+              "ToolTip": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\terrain.h",
               "RelativeToolTip": "terrain.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -64,35 +79,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "simplex.fs",
-              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.fs",
+              "DocumentMoniker": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.fs",
               "RelativeDocumentMoniker": "simplex.fs",
-              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.fs",
+              "ToolTip": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.fs",
               "RelativeToolTip": "simplex.fs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-31T12:31:23.497Z"
+              "WhenOpened": "2026-03-31T12:31:23.497Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "simplex.tcs",
-              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.tcs",
+              "DocumentMoniker": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.tcs",
               "RelativeDocumentMoniker": "simplex.tcs",
-              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.tcs",
+              "ToolTip": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.tcs",
               "RelativeToolTip": "simplex.tcs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwEoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-31T12:31:22.79Z"
+              "WhenOpened": "2026-03-31T12:31:22.79Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "simplex.tes",
-              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.tes",
+              "DocumentMoniker": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.tes",
               "RelativeDocumentMoniker": "simplex.tes",
-              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.tes",
+              "ToolTip": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.tes",
               "RelativeToolTip": "simplex.tes",
               "ViewState": "AgIAAEwAAAAAAAAAAAAowHYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -100,16 +117,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "simplex.vs",
-              "DocumentMoniker": "D:\\OpenGl 3D\\Simplex\\simplex.vs",
+              "DocumentMoniker": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.vs",
               "RelativeDocumentMoniker": "simplex.vs",
-              "ToolTip": "D:\\OpenGl 3D\\Simplex\\simplex.vs",
+              "ToolTip": "D:\\Terrain-OpenGL\\Terrain-Rendering\\Simplex\\simplex.vs",
               "RelativeToolTip": "simplex.vs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-31T12:31:11.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-31T12:31:11.994Z"
             }
           ]
         }

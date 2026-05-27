@@ -8,8 +8,8 @@ struct Vertex
     glm::vec2 UV;
 };
 
-Grass::Grass(Shader& shader)
-    : shader(shader), VAO(0), VBO(0), EBO(0), instanceVBO(0)
+Grass::Grass(Shader& shader, float frequency, float amplitude, float spread)
+    : shader(shader), VAO(0), VBO(0), EBO(0), instanceVBO(0), uFrequency(frequency), uAmplitude(amplitude), spreadRadius(spread)
 {
     Init();
 }

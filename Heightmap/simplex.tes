@@ -1,0 +1,118 @@
+#version 450 core
+layout(quads, fractional_even_spacing, ccw) in;
+
+in TCS_OUT {
+    vec3 pos;
+    vec2 uv;
+} tes_in[];
+
+out TES_OUT {
+    vec3 worldPos;
+    vec3 normal;
+    vec2 uv;
+    float height;
+} tes_out;
+
+layout(location=0)  uniform mat4 uModel;
+layout(location=1)  uniform mat4 uView;
+layout(location=2)  uniform mat4 uProj;
+
+// FBM controls
+layout(location=3)  uniform float uAmplitude  = 30.0;   // vertical scale
+layout(location=4)  uniform float uFrequency  = 0.05;   // world->noise scale
+layout(location=5)  uniform int   uOctaves    = 5;
+layout(location=6)  uniform float uLacunarity = 2.0;
+layout(location=7)  uniform float uGain       = 0.5;
+layout(location=8)  uniform vec2  uScroll     = vec2(0.0); // animate if desired
+
+// ---------- Simplex core ----------
+
+float random(vec2 p)
+{
+     return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+
+vec2 gradient(vec2 p)
+{
+     float r = random(p) * 6.2831853;
+     return vec2(cos(r), sin(r));
+}
+
+float simplex2D(vec2 p)
+{
+     float n0, n1, n2; // Noise contributions from the three corners
+     const float F2 = 0.5*(sqrt(3.0) - 1.0);
+     float s = dot(p, vec2(F2));
+     int i = int(floor(p.x + s));
+     int j = int(floor(p.y + s));
+
+     const float G2 = (3.0-sqrt(3.0))/6.0;
+     float t = float(i + j) * G2;
+     float X0 = i-t; // Unskew the cell origin back to (x,y) space
+     float Y0 = j-t;
+     float x0 = p.x-X0; // The x,y distances from the cell origin
+     float y0 = p.y-Y0;
+
+     int i1, j1; // Offsets for second (middle) corner of simplex in (i,j) coords
+     if(x0>y0) { i1=1; j1=0; } // lower triangle
+     else { i1=0; j1=1; }      // upper triangle
+
+     float x1 = x0 - float(i1) + G2; // Offsets for middle corner in (x,y) unskewed coords
+     float y1 = y0 - float(j1) + G2;
+     float x2 = x0 - 1.0 + 2.0 * G2; // Offsets for last corner in (x,y) unskewed coords
+     float y2 = y0 - 1.0 + 2.0 * G2;
+
+     vec2 g0 = gradient(vec2(i, j));
+     vec2 g1 = gradient(vec2(i + i1, j + j1));
+     vec2 g2 = gradient(vec2(i + 1, j + 1)); 
+
+     float t0 = 0.5 - x0*x0 - y0*y0;
+     if(t0<0) n0 = 0.0;
+     else {
+         t0 *= t0;
+         n0 = t0 * t0 * dot(g0, vec2(x0, y0));
+     }
+
+     float t1 = 0.5 - x1*x1 - y1*y1;
+     if(t1<0) n1 = 0.0;
+     else {
+         t1 *= t1;
+         n1 = t1 * t1 * dot(g1, vec2(x1, y1));
+     }
+
+     float t2 = 0.5 - x2*x2 - y2*y2;
+     if(t2<0) n2 = 0.0;
+     else {
+         t2 *= t2;
+         n2 = t2 * t2 * dot(g2, vec2(x2, y2));
+     }
+
+     return 30 * (n0 + n1 + n2);
+}
+
+void main() {
+    vec2 uv = gl_TessCoord.xy;
+
+    vec3 p = mix(mix(tes_in[0].pos, tes_in[1].pos, uv.x), mix(tes_in[3].pos, tes_in[2].pos, uv.x), uv.y);
+
+    float h = simplex2D(p.xz * uFrequency + uScroll) * uAmplitude;
+
+    // from ChatGPT
+    float e = 0.01;
+
+    float hL = simplex2D((p.xz + vec2(-e,0)) * uFrequency) * uAmplitude;
+    float hR = simplex2D((p.xz + vec2(e,0)) * uFrequency) * uAmplitude;
+    float hD = simplex2D((p.xz + vec2(0,-e)) * uFrequency) * uAmplitude;
+    float hU = simplex2D((p.xz + vec2(0,e)) * uFrequency) * uAmplitude;
+
+    vec3 normal = normalize(vec3(hL - hR, 2.0*e, hD - hU));
+
+    vec3 world = vec3(p.x, p.y + h, p.z);
+
+    tes_out.worldPos = world;
+    tes_out.normal = normal;
+    tes_out.uv = uv;
+    tes_out.height = h;
+
+    gl_Position = uProj * uView * uModel * vec4(world, 1.0);
+}
